@@ -1,0 +1,35 @@
+.showcontent{
+    background: #222;
+    height: 5000px;
+}
+
+.showcontent .video-description{
+    display: none;
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#video {
+  display: block;
+  margin: 0 auto;
+  height: 350px;
+}
+
+#videoSection{
+    height: 4000px;
+}
+
+#fixed-description {
+  width: 622px;
+  margin: 30px auto 0;
+  color: white;
+  text-align: right;
+  line-height: 50px;
+  font-size: 35px;
+  font-weight: 600;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+
