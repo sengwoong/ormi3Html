@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  
+    background-color: #f4f4f4;
+  }
+
+  .leftcontainer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .login-form__input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-form__label {
+    font-weight: bold;
+  }
+
+  .login-form__input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .login-form__button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .login-form__button:hover {
+    background-color: #0056b3;
+  }
+
+  .output {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+  }
+</style>
+<title>Login Page</title>
+</head>
+<body>
+  <div class="leftcontainer">
+    <form class="login-form" >
+      <h2 class="login-form__title">Login</h2>
+      <div class="login-form__input-group">
+        <label class="login-form__label" for="username">Username</label>
+        <input class="login-form__input" type="text" id="username" name="username" minlength="5" maxlength="10" required>
+      </div>
+      <div class="login-form__input-group">
+        <label class="login-form__label" for="password">Password</label>
+        <input class="login-form__input" type="password" id="password" name="password" required>
+      </div>
+      <button class="login-form__button" type="submit">Login</button>
+    </form>
+    <div class="output" id="output"></div>
+  </div>
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const outputDiv = document.getElementById('output');
+
+    loginForm.addEventListener('submit', function(event) {
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      let message = "";
+
+      if (username.length < 5 || username.length > 10) {
+        message += 'Username must be between 5 and 10 characters.<br>';
+        event.preventDefault();
+      }
+
+      if (!containsSpecialCharacter(password)) {
+        message += 'Password must contain at least one special character.';
+        event.preventDefault();
+      }
+
+      outputDiv.innerHTML = message;
+    });
+
+    function containsSpecialCharacter(text) {
+      const specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+      return specialCharacters.test(text);
+    }
+  </script>
+</body>
+</html>
