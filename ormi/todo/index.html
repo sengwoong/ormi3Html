@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Drag and Distance</title>
+  <link rel="stylesheet" href="./todo.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script defer src="./todo.js"></script>
+
+</head>
+<body>
+    <div class="divider"></div>
+    <div class="menu-bar">
+        <!-- Add Box Button -->
+        <div class="options">
+            <button id="addBoxBtn">상자 추가</button>
+        </div>
+
+        <!-- Delete Clicked Box Button -->
+        <div class="options">
+            <button id="deleteBoxBtn">현재 클릭한 상자 지우기</button>
+        </div>
+
+        <!-- Change Color of Clicked Box Button -->
+        <div class="options">
+            <button id="changeColorBtn">현재 클릭한 상자 색상 바꾸기</button>
+        </div>
+    </div>
+      
+    <div class="status-bar">
+      <div class="running-items">실행 중인 항목</div>
+      <div class="completed-items">완료된 항목</div>
+    </div>
+    
+    <div id="container">
+    
+    </div>
+  
+ 
+</body>
+</html>

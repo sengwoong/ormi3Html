@@ -7,11 +7,37 @@
     <link rel="stylesheet" href="./showcontent.css">
     <script defer src="./youtube.js"></script>
 
+    <script>
+        function adjustParallaxPosition() {
+            const parallaxElement = document.getElementById('parallax');
+          
+            const windowWidth = window.innerWidth;
+      
+            if (windowWidth < 770) {
+                const marginLeft =  - (770 - windowWidth) * 1; // 
+                parallaxElement.style.marginLeft = `${marginLeft}px`;
+
+            } else {
+                parallaxElement.style.marginLeft = '0';
+            }
+
+
+            
+        }
+      
+        // 페이지 로딩 및 리사이즈 이벤트에 대한 처리
+        window.onload = adjustParallaxPosition;
+        window.onresize = adjustParallaxPosition;
+      </script>
+
+
     <title>Document</title>
 </head>
 <body>
 <div id="inner">
+    <!-- 페럴러즈 -->
 <div id="parallax">
+    <!-- 3층 -->
     <div id="floor">
         <img src="img/cloud.png" alt="위에구름" class="small-img first-floor_cloud1">
         <img src="img/darkCloud.png" alt="위에구름" class="small-img first-floor_cloud2">
@@ -21,7 +47,7 @@
         <img src="img/darkCloud.png" alt="위에구름" class="small-img first-floor_cloud6">
 
     </div>
-
+<!-- 2층 -->
     <div id="floor">
         <img src="img/darkCloud.png" alt="아래구름" class="small-img second-floor_cloud1">
         <img src="img/Cloud.png" alt="아래구름" class="small-img second-floor_cloud2">
@@ -33,7 +59,7 @@
         <img src="img/ormi.png" alt="나무들" class="big-img second-floor_mount2">
 
     </div>
-
+<!--1층  -->
     <div id="floor">
         <img src="img/ormi.png" alt="나무들" class="big-img third-floor_mount1">
         <img src="img/ormi.png" alt="나무들" class="big-img third-floor_mount2">
@@ -42,6 +68,7 @@
     </div>
 </div>
 
+<!-- 영상으로 홍보 -->
 <div class="showcontent">
     <section id="video-section">
         <div id="fixed-wrapper">
@@ -56,6 +83,10 @@
       </section>
 </div>
 
+<!--  흰공이 커져서 화면덮고 display 아래로직 z-indx999로만듬 마우스이벤트 막는건 미래의 내가 알아서해줄꺼임 -->
+<div class="aaa"></div>
+
+<!--  버튼 4개 보여주고 마우스이벤트 따라다님 -->
 <div class="aaa"></div>
 </div>
 </body>

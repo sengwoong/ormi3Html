@@ -47,6 +47,10 @@ function centerElement(elementId, video) {
   }
 }
 
+
+
+
+
 videoElement.addEventListener("loadedmetadata", () => {
   document.getElementById("video-section").style.height = videoElement.duration * videoPlayBack + "px";
 })
@@ -86,3 +90,9 @@ window.addEventListener("scroll", () => {
 })
 
 
+
+adjustYoutubePosition=()=>{
+    videoElement.style.height= window.innerWidth/3+'px'
+}
+window.onload = adjustYoutubePosition;
+window.onresize = adjustYoutubePosition;

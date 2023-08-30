@@ -3,6 +3,7 @@
 margin: 0 auto;
 }
 
+
 /* 배경이미지사이즈 */
 .small-img {
     width: 30%;
@@ -17,6 +18,7 @@ margin: 0 auto;
 
 /* 페럴러즈스타트 */
 #parallax {
+
     width: 100%;
     
 }
@@ -26,9 +28,11 @@ margin: 0 auto;
 }
 
 #floor {
+ 
     position: relative;
     width: 100%;
     height: 250px;
+    min-width: 500px;
 }
 
 #floor * {
@@ -38,7 +42,7 @@ margin: 0 auto;
 
 /* 1층 */
 .first-floor_cloud1 {
-    left: 5%;
+    left: 0;
     bottom: -50px;
 }
 .first-floor_cloud2 {
@@ -64,7 +68,7 @@ margin: 0 auto;
 /* 2층  */
 
 .second-floor_cloud1 {
-    left: 5%;
+    left: 0;
     bottom: -50px;
 }
 .second-floor_cloud2 {
@@ -90,7 +94,7 @@ margin: 0 auto;
 /* 3층 */
 .third-floor_mount1 {
 
-    left: 5%;
+    left: 0;
     bottom: 100px;
 }
 
@@ -111,4 +115,3 @@ margin: 0 auto;
 }
 
 
-/* 페러러즈 끝 */

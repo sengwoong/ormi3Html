@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>심리검사</title>
+</head>
+<body>
+  <div id="question-container">
+    <h2>질문</h2>
+    <p id="question-text"></p>
+    <button id="next-button">Next</button>
+  </div>
+  
+  <script>
+    const questions = [
+      "질문 1",
+      "질문 2",
+      "질문 3",
+      // ... 나머지 질문들 ...
+      "질문 30"
+    ];
+    
+    let currentQuestionIndex = 0;
+    
+    const questionTextElement = document.getElementById('question-text');
+    const nextButton = document.getElementById('next-button');
+    
+    function showQuestion() {
+      questionTextElement.textContent = questions[currentQuestionIndex];
+    }
+    
+    function goToNextQuestion() {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion();
+      } else {
+        alert('검사가 종료되었습니다.');
+        // 여기에 검사 결과를 처리하는 코드를 추가할 수 있습니다.
+      }
+    }
+    
+    nextButton.addEventListener('click', goToNextQuestion);
+    
+    showQuestion();
+  </script>
+</body>
+</html>
