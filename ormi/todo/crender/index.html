@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진짜 달력</title>
+    <!-- Date-fns와 Date-fns-tz 라이브러리 CDN 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.24.0/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns-tz@1.10.0/"></script>
+    <style>
+        .calendar {
+           
+        }
+.daybox{
+    display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+}
+        .day {
+            width: calc(100% / 7);
+            cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태로 만듭니다. */
+        }
+
+        .sunday {
+            color: red;
+        }
+
+        .saturday {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar" id="calendar"></div>
+    <button id="prevMonth">이전 달</button>
+    <button id="nextMonth">다음 달</button>
+
+    <script>
+        const calendar = document.getElementById("calendar");
+        const prevMonthBtn = document.getElementById("prevMonth");
+        const nextMonthBtn = document.getElementById("nextMonth");
+        let currentYear, currentMonth;
+
+        function createCalendar(year, month) {
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayOfMonth = new Date(year, month, 1);
+            const startingDay = firstDayOfMonth.getDay(); // 0 (일요일)부터 6 (토요일)까지
+
+            const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+
+            let calendarHTML = "";
+
+            // 월과 년도 표시
+            calendarHTML += `<h2>${year}년 ${month + 1}월</h2>`;
+            calendarHTML += `<div class="daybox">`
+            // 요일 표시
+            for (let i = 0; i < 7; i++) {
+                calendarHTML += `<div class="day">${dayNames[i]}</div>`;
+            }
+
+            // 빈 칸 추가
+            for (let i = 0; i < startingDay; i++) {
+                calendarHTML += `<div class="day"></div>`;
+            }
+
+            // 날짜 추가
+            for (let i = 1; i <= daysInMonth; i++) {
+                const currentDate = new Date(year, month, i);
+                const dayOfWeek = currentDate.getDay();
+
+                let dayClass = "";
+                if (dayOfWeek === 0) {
+                    dayClass = "sunday";
+                } else if (dayOfWeek === 6) {
+                    dayClass = "saturday";
+                }
+
+                calendarHTML += `<div class="day ${dayClass}" onclick="handleDayClick(${i})">${i}</div>`;
+            }
+
+            calendarHTML += `</div>`;
+            calendar.innerHTML = calendarHTML;
+        }
+
+        function updateCalendar() {
+            createCalendar(currentYear, currentMonth);
+        }
+
+        function handleDayClick(day) {
+            console.log(`클릭한 날짜: ${currentYear}년 ${currentMonth + 1}월 ${day}일`);
+        }
+
+        prevMonthBtn.addEventListener("click", function () {
+            if (currentMonth === 0) {
+                currentYear--;
+                currentMonth = 11;
+            } else {
+                currentMonth--;
+            }
+            updateCalendar();
+        });
+
+        nextMonthBtn.addEventListener("click", function () {
+            if (currentMonth === 11) {
+                currentYear++;
+                currentMonth = 0;
+            } else {
+                currentMonth++;
+            }
+            updateCalendar();
+        });
+
+        const now = new Date();
+        currentYear = now.getFullYear();
+        currentMonth = now.getMonth();
+        createCalendar(currentYear, currentMonth);
+    </script>
+</body>
+</html>
