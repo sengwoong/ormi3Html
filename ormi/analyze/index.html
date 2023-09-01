@@ -1,46 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>심리검사</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>질문 전략 평가</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" defer src="./CommandScoring.js"></script> 
+  <script type="module"  defer src="./script.js"></script>
+
 </head>
 <body>
-  <div id="question-container">
-    <h2>질문</h2>
-    <p id="question-text"></p>
-    <button id="next-button">Next</button>
+    <div class="main">
+  <div class="container">
+    <div id="question-container" class="question"></div>
+    <textarea id="answer-input" placeholder="답변을 입력하세요..." ></textarea>
+    <div class="btn-option">
+    <button id="back-btn" class="btn">뒤로가기</button>
+    <button id="next-btn" class="btn">다음 질문</button>
+    <button id="evaluate-btn" class="btn">답변 영구저장</button>
+    <button id="scoring-btn" class="btn">채점하기</button>
+    <button id="clear-localstorage-btn" class="btn">현재 전략 로컬스토리지 지우기</button>
+
+<div id="questions"></div>
+<div id="question-index"></div>
+    </div> 
+    <!-- HTML -->
+
   </div>
-  
-  <script>
-    const questions = [
-      "질문 1",
-      "질문 2",
-      "질문 3",
-      // ... 나머지 질문들 ...
-      "질문 30"
-    ];
-    
-    let currentQuestionIndex = 0;
-    
-    const questionTextElement = document.getElementById('question-text');
-    const nextButton = document.getElementById('next-button');
-    
-    function showQuestion() {
-      questionTextElement.textContent = questions[currentQuestionIndex];
-    }
-    
-    function goToNextQuestion() {
-      if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        showQuestion();
-      } else {
-        alert('검사가 종료되었습니다.');
-        // 여기에 검사 결과를 처리하는 코드를 추가할 수 있습니다.
-      }
-    }
-    
-    nextButton.addEventListener('click', goToNextQuestion);
-    
-    showQuestion();
-  </script>
+  </div>
+
 </body>
 </html>
+ 
