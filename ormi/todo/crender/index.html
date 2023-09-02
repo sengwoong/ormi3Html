@@ -9,18 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/date-fns-tz@1.10.0/"></script>
     <style>
         .calendar {
-           
+            position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* 너비를 90%로 설정 */
+    height: 90%; /* 높이를 90%로 설정 */
         }
 .daybox{
     display: flex;
             flex-wrap: wrap;
-            width: 80%;
+         flex-grow: 1;
 }
         .day {
-            width: calc(100% / 7);
-            cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태로 만듭니다. */
+            width: calc((100% / 7 ));
+            height: 8vw;
+            cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태로 
+            만듭니다. */
+            border: 0.02px solid rgb(66, 66, 66); 
         }
-
         .sunday {
             color: red;
         }
