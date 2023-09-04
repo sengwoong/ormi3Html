@@ -6,18 +6,25 @@ let isDragging = false;
 let initialX, initialY;
 let currentClickedBox = null;
 
+const urlParams = new URLSearchParams(window.location.search);
+const yearParam = urlParams.get('year');
+const monthParam = urlParams.get('month');
+const dayParam = urlParams.get('day');
+const boxKeyInfo = `box_${yearParam}_${monthParam}_${dayParam}`;
+
+
 // Load box information from local storage when the page loads
-const boxInfoJSON = localStorage.getItem('boxInfo');
-let windowJSON = localStorage.getItem('windowInfo');
+const boxInfoJSON = localStorage.getItem(boxKeyInfo);
+
 let savedBoxInfoMap = boxInfoJSON ? JSON.parse(boxInfoJSON) : {};
 
 
-let savedWidowInfoMap = windowJSON ? JSON.parse(windowJSON) : {};
 
 
 
 
 function updateAndSaveBoxInfo(boxElement) {
+  console.log(boxElement)
   const boxId = boxElement.id;
 
   const boxInfo = {
@@ -31,7 +38,7 @@ function updateAndSaveBoxInfo(boxElement) {
 
   savedBoxInfoMap[boxId] = boxInfo;
 
-  localStorage.setItem('boxInfo', JSON.stringify(savedBoxInfoMap));
+  localStorage.setItem(boxKeyInfo, JSON.stringify(savedBoxInfoMap));
 }
 
 function createNewBox() {
@@ -89,12 +96,6 @@ document.addEventListener('mousemove', (e) => {
   const newTop =   (currentClickedBox.offsetTop + distanceY ) /window.innerHeight*100
 
 
-  console.log("currentClickedBox.offsetTop ")
-  console.log(currentClickedBox.offsetTop+distanceY)
-  console.log("window.innerHeight ")
-  console.log(window.innerHeight)
-  console.log("currentClickedBox.offsetTop + distanceY / window.innerHeight")
-
   
 
   const newLeft = (currentClickedBox.offsetLeft + distanceX)/window.innerWidth*100;
@@ -124,7 +125,8 @@ deleteBoxButton.addEventListener('click', () => {
 
     const boxId = currentClickedBox.id;
     delete savedBoxInfoMap[boxId];
-    localStorage.setItem('boxInfo', JSON.stringify(savedBoxInfoMap));
+    console.log(boxKeyInfo)
+    localStorage.setItem(boxKeyInfo, JSON.stringify(savedBoxInfoMap));
   }
 });
 

@@ -16,17 +16,23 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    
   }
 
   .question {
     margin-bottom: 20px;
     font-size: 18px;
   }
-.btn-option{
+.question-btn-option{
     display: flex;
     flex-wrap: wrap;
+ 
 }
-  .btn {
+#question-index{
+overflow: scroll;
+height: 150px;
+}
+.btn {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
@@ -37,20 +43,51 @@
     margin: 10px;
   }
 
-  .btn:last-child {
-    margin-right: 0;
-  }
+ 
 
   .btn:hover {
     background-color: #0056b3;
   }
 
-  #answer-input {
+  #question-answer-input {
     width: 100%;
-    height: 45vh; /* 높이를 화면 높이(70vh)의 70%로 설정합니다. */
-    /* 다른 스타일 속성들... */
+    height: 45vh; 
   }
-  /* 초록색으로 푼 문제 스타일 */
+
+
+  #results-container {
+    position: relative; /* 부모 요소를 상대적 위치로 설정합니다. */
+    display: none;
+  }
+  
+  #results-back-btn {
+    position: fixed; /* 버튼을 절대 위치로 설정합니다. */
+    top: 5%; /* 부모 요소의 세로 중앙으로 이동합니다. */
+    left: 90%; /* 부모 요소의 가로 중앙으로 이동합니다. */
+    opacity: 0.7;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    text-align: center;
+
+  }
+  #home-btn{
+    position: fixed; /* 버튼을 절대 위치로 설정합니다. */
+    top: 5%; /* 부모 요소의 세로 중앙으로 이동합니다. */
+    left: 90%; /* 부모 요소의 가로 중앙으로 이동합니다. */
+    opacity: 0.7;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+ 
+    display: inline-block; /* 내부 요소들을 가로 정렬하기 위해 flex를 사용합니다. */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    justify-content: center; /* 가로 방향 가운데 정렬 */
+    text-align: center; /* 텍스트 내에서 가로 방향 가운데 정렬 */
+    line-height: 30px; /* 버튼의 높이와 같게 설정하여 수직 방향 가운데 정렬 */
+
+  }
+  
 .solved {
     color: green;
 }
@@ -60,4 +97,6 @@
     color: red;
 }
 
-  
+.clickable-element{
+  cursor: pointer; 
+}

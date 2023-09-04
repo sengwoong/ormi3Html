@@ -10,24 +10,26 @@
     <style>
         .calendar {
             position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; /* 너비를 90%로 설정 */
-    height: 90%; /* 높이를 90%로 설정 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
         }
-.daybox{
-    display: flex;
+
+        .daybox {
+            display: flex;
             flex-wrap: wrap;
-         flex-grow: 1;
-}
-        .day {
-            width: calc((100% / 7 ));
-            height: 8vw;
-            cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능한 상태로 
-            만듭니다. */
-            border: 0.02px solid rgb(66, 66, 66); 
+            flex-grow: 1;
         }
+
+        .day {
+            width: calc((100% / 7));
+            height: 8vw;
+            cursor: pointer;
+            border: 0.02px solid rgb(66, 66, 66);
+        }
+
         .sunday {
             color: red;
         }
@@ -35,51 +37,63 @@
         .saturday {
             color: blue;
         }
+
+        .highlight {
+            background-color: red;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="calendar" id="calendar"></div>
     <button id="prevMonth">이전 달</button>
     <button id="nextMonth">다음 달</button>
-
+    <button id="goHome">홈으로 가기</button>
     <script>
         const calendar = document.getElementById("calendar");
         const prevMonthBtn = document.getElementById("prevMonth");
         const nextMonthBtn = document.getElementById("nextMonth");
         let currentYear, currentMonth;
-
+        const goHomeBtn = document.getElementById("goHome");
+        goHomeBtn.addEventListener("click", function () {
+            window.location.href = "http://127.0.0.1:5500/index.html"; // 홈 페이지 URL로 변경
+        });
         function createCalendar(year, month) {
             const daysInMonth = new Date(year, month + 1, 0).getDate();
             const firstDayOfMonth = new Date(year, month, 1);
-            const startingDay = firstDayOfMonth.getDay(); // 0 (일요일)부터 6 (토요일)까지
+            const startingDay = firstDayOfMonth.getDay();
 
             const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
 
             let calendarHTML = "";
 
-            // 월과 년도 표시
             calendarHTML += `<h2>${year}년 ${month + 1}월</h2>`;
-            calendarHTML += `<div class="daybox">`
-            // 요일 표시
+            calendarHTML += `<div class="daybox">`;
+
             for (let i = 0; i < 7; i++) {
                 calendarHTML += `<div class="day">${dayNames[i]}</div>`;
             }
 
-            // 빈 칸 추가
             for (let i = 0; i < startingDay; i++) {
                 calendarHTML += `<div class="day"></div>`;
             }
 
-            // 날짜 추가
             for (let i = 1; i <= daysInMonth; i++) {
                 const currentDate = new Date(year, month, i);
                 const dayOfWeek = currentDate.getDay();
-
                 let dayClass = "";
+
+                const storageKey = `box_${year}_${month + 1}_${i}`;
+                const storedDate = localStorage.getItem(storageKey);
+
                 if (dayOfWeek === 0) {
                     dayClass = "sunday";
                 } else if (dayOfWeek === 6) {
                     dayClass = "saturday";
+                }
+
+                if (storedDate) {
+                    dayClass += " highlight";
                 }
 
                 calendarHTML += `<div class="day ${dayClass}" onclick="handleDayClick(${i})">${i}</div>`;
@@ -94,7 +108,7 @@
         }
 
         function handleDayClick(day) {
-            console.log(`클릭한 날짜: ${currentYear}년 ${currentMonth + 1}월 ${day}일`);
+            window.location.href = `http://127.0.0.1:5500/todo/index.html?year=${currentYear}&month=${currentMonth + 1}&day=${day}`;
         }
 
         prevMonthBtn.addEventListener("click", function () {

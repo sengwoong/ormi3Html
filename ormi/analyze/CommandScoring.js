@@ -94,26 +94,3 @@ async function callChatGPTAPI(url, question, answer) {
 
   return res;
 }
-
-// const remoteControl = new RemoteControl();
-
-// const qaPairs = {
-//   "사람은동물인가?": "사람도 동물중 하나야",
-//   "사람은 여자인가?": "사람은여자만있어",
-//   "사람은 죽는가?": "안죽을수도있지",
-//   // 추가적인 질문과 대답 쌍을 여기에 추가
-// };
-
-// Object.entries(qaPairs).forEach(([question, answer]) => {
-//   const questionCommand = new QuestionCommand(question, answer);
-//   remoteControl.addCommand(questionCommand);
-// });
-
-// const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/";
-
-// remoteControl.executeCommands(url).then(resultMap => {
-//   console.log(resultMap);
-// });
-
-
- 

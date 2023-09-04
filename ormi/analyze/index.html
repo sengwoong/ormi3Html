@@ -11,22 +11,35 @@
 </head>
 <body>
     <div class="main">
+    
   <div class="container">
+  
+    <div id="question">
+      <a href="http://127.0.0.1:5500/index.html" id="home-btn" class="btn" > H </a>
     <div id="question-container" class="question"></div>
-    <textarea id="answer-input" placeholder="답변을 입력하세요..." ></textarea>
-    <div class="btn-option">
-    <button id="back-btn" class="btn">뒤로가기</button>
-    <button id="next-btn" class="btn">다음 질문</button>
-    <button id="evaluate-btn" class="btn">답변 영구저장</button>
-    <button id="scoring-btn" class="btn">채점하기</button>
-    <button id="clear-localstorage-btn" class="btn">현재 전략 로컬스토리지 지우기</button>
+    <textarea id="question-answer-input" placeholder="답변을 입력하세요..." ></textarea>
+    <div class="question-btn-option">
+    <button id="question-back-btn" class="btn">뒤로가기</button>
+    <button id="question-next-btn" class="btn">다음 질문</button>
+    <button id="question-evaluate-btn" class="btn">답변 영구저장</button>
+    <button id="question-scoring-btn" class="btn">채점하기</button>
+    <button id="question-clear-localstorage-btn" class="btn">현재 전략 로컬스토리지 지우기</button>
 
-<div id="questions"></div>
-<div id="question-index"></div>
+    </div>
+    <div id="question-index"></div>
     </div> 
-    <!-- HTML -->
+
+
+    <div id="results-container">
+      <button id="results-back-btn" class="btn" > < </button>
+      <div id="results"></div>
+    </div>
+    
 
   </div>
+
+
+  
   </div>
 
 </body>

@@ -3,35 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./showcontent.css">
-    <script defer src="./youtube.js"></script>
-
-    <script>
-        function adjustParallaxPosition() {
-            const parallaxElement = document.getElementById('parallax');
-          
-            const windowWidth = window.innerWidth;
-      
-            if (windowWidth < 770) {
-                const marginLeft =  - (770 - windowWidth) * 1; // 
-                parallaxElement.style.marginLeft = `${marginLeft}px`;
-
-            } else {
-                parallaxElement.style.marginLeft = '0';
-            }
+    <link rel="stylesheet" href="./Parallax.css">
+    <link rel="stylesheet" href="./videocontent.css">
+    <link rel="stylesheet" href="./containerLink.css">
+    <script type="module" src="./youtube.js"></script>
+    <script type="module" src="./ParallaxPosition.js"></script>
+<script type="module" src="./containerLink.js"></script>
+   
 
 
-            
-        }
-      
-        // 페이지 로딩 및 리사이즈 이벤트에 대한 처리
-        window.onload = adjustParallaxPosition;
-        window.onresize = adjustParallaxPosition;
-      </script>
-
-
-    <title>Document</title>
+    <title>ormiTodoMain</title>
 </head>
 <body>
 <div id="inner">
@@ -55,6 +36,11 @@
         second-floor_cloud3">
         <img src="img/Cloud.png" alt="아래구름" class="small-img second-floor_cloud4">
 
+        <div class="TheOrmi">
+            The<br/>
+            Orimi
+        </div>
+        
         <img src="img/ormi.png" alt="나무들" class="big-img second-floor_mount1">
         <img src="img/ormi.png" alt="나무들" class="big-img second-floor_mount2">
 
@@ -72,22 +58,31 @@
 <div class="showcontent">
     <section id="video-section">
         <div id="fixed-wrapper">
-            <div class="video-description">오르미 강성웅학생의 캔버스</div>
+            <div class="video-description">오르미 강성웅학생의 일정관리웹</div>
             <video id="video" src="./img/[ESTsoft] ESTsoft Intro.mp4" muted loop></video>
           <div id="fixed-description">
             <div>고인(예정)의 생전 포토폴리오</div>
-            <div>리듬게임</div>
-            <div>슈팅게임</div>
+            <div>문제풀이</div>
+            <div>일정관리</div>
           </div>
         </div>
       </section>
 </div>
 
 <!--  흰공이 커져서 화면덮고 display 아래로직 z-indx999로만듬 마우스이벤트 막는건 미래의 내가 알아서해줄꺼임 -->
-<div class="aaa"></div>
+<div class="link">
+<div class="container-link">
+    <button class="preloader__btn preloader__btn--top">
+        <span class="preloader__btn_hold">Q Hold</span>
+      </button>
+      <button class="preloader__btn preloader__btn--bottom">
+        <span class="preloader__btn_hold">Todo Hold</span>
+      </button>
+      
+</div>
 
-<!--  버튼 4개 보여주고 마우스이벤트 따라다님 -->
-<div class="aaa"></div>
+</div>
+
 </div>
 </body>
 </html>

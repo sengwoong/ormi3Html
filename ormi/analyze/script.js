@@ -4,21 +4,28 @@ const remoteControl = new RemoteControl();
 let questionCommand;
 
 const questionContainer = document.getElementById('question-container');
-const answerInput = document.getElementById('answer-input');
-const backButton = document.getElementById('back-btn');
-const nextButton = document.getElementById('next-btn');
-const evaluateButton = document.getElementById('evaluate-btn');
+const answerInput = document.getElementById('question-answer-input');
+const backButton = document.getElementById('question-back-btn');
+const nextButton = document.getElementById('question-next-btn');
+const evaluateButton = document.getElementById('question-evaluate-btn');
 let questionIndexContainer = document.getElementById('question-index');
 
-const scoringBtn = document.getElementById('scoring-btn');
-const clearLocalStorageButton = document.getElementById('clear-localstorage-btn');
+const scoringBtn = document.getElementById('question-scoring-btn');
+const clearLocalStorageButton = document.getElementById('question-clear-localstorage-btn');
+const questionMain = document.getElementById('question');
+
+
+const resultsDiv = document.getElementById("results");
+const resultsContainer = document.getElementById("results-container");
+const resultsBackBtn = document.getElementById("results-back-btn");
+
 
 let storedAnswers;
 
 const strategies = {
   react: ["React의 주요 특징은 무엇인가요?", "React 컴포넌트를 만드는 방법을 설명해주세요."],
   java: ["Java의 주요 특징은 무엇인가요?", "Java 클래스를 만드는 방법을 설명해주세요."],
-  javascript: ["JavaScript의 주요 특징은 무엇인가요?", "JavaScript 컴포넌트를 만드는 방법을 설명해주세요.","자바스크립트와 자바의 관계는?"],
+  javascript: ["JavaScript의 주요 특징은 무엇인가요?", "JavaScript 컴포넌트를 만드는 방법을 설명해주세요.","자바스크립트와 자바의 관계는?","JavaScript의 주요 특징은 무엇인가요?","JavaScript의 주요 특징은 무엇인가요?","JavaScript의 주요 특징은 무엇인가요?","JavaScript의 주요 특징은 무엇인가요?","JavaScript의 주요 특징은 무엇인가요?"],
   // 다른 전략에 대한 질문들을 추가할 수 있습니다.
 };
 
@@ -109,18 +116,7 @@ PulleDisplaysProblems();
 
  
  
-//   for (const i=1 ; i < questions.length+1; i++) {
-//     // 문제를 푼 여부에 따라 스타일 클래스를 추가
-    
-//     if (problemSolved.has(i)) {
-//         questionIndexContainer.classList.add('solved');
-//     } else {
-//         questionIndexContainer.classList.add('unsolved');
-//     }
 
-   
- 
-// }
 
 
   }
@@ -128,6 +124,7 @@ PulleDisplaysProblems();
 function  PulleDisplaysProblems() {
     let problemSolved =remoteControl.getCommand()
     questionIndexContainer.childNodes.forEach((content, idx) => {
+      content.classList.add("clickable-element");
         if (problemSolved.has(idx+1)) {
            content.classList.add("solved");
         } else {
@@ -139,7 +136,7 @@ function  PulleDisplaysProblems() {
 
  function CreateSelector(){
     const questions = strategies[currentStrategy];
-    console.log(questions.length)
+
     for (let i=1 ; i < questions.length+1; i++) {
     const questionContainer = document.createElement('div');
     questionContainer.textContent = `문제 ${i }`;
@@ -147,7 +144,7 @@ function  PulleDisplaysProblems() {
       questionContainer.addEventListener('click', () => {
        
         currentQuestionIndex = i - 1; // 인덱스는 0부터 시작하므로 1을 
-    console.log(currentQuestionIndex)
+   
     updateQuestionAndAnswer()
     });
     // 문제를 화면에 추가
@@ -172,9 +169,49 @@ clearLocalStorageButton.addEventListener('click', () => {
   location.reload()
 });
 
+//체점페이지전환
 const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/";
-scoringBtn.addEventListener('click', () => {
-  remoteControl.executeCommands(url).then(resultMap => {
-    console.log(resultMap);
-  });
+
+
+
+scoringBtn.addEventListener('click', async () => {
+  console.log("로딩중");
+  questionMain.style.display = "none";
+  resultsContainer.style.display="block"
+
+  try {
+    const resultMap = await remoteControl.executeCommands(url);
+
+    // 결과를 화면에 로그로 출력
+    resultsDiv.innerHTML = ""; // 기존 결과 초기화
+    for (const questionId in resultMap) {
+      if (resultMap.hasOwnProperty(questionId)) {
+        const question = resultMap[questionId];
+        const resultText = `
+                
+                질문 ${questionId + 1}'번'
+                \n\n
+                문제:${question.question}
+                \n\n
+                답변: ${question.answer}\n\n\n
+                해답: ${question.evaluation}\n\n\n\n\n`;
+
+        const resultElement = document.createElement("pre");
+        resultElement.textContent = resultText;
+        resultsDiv.appendChild(resultElement);
+      }
+    }
+
+  } catch (error) {
+    console.error("에러 발생:", error);
+  }
 });
+
+
+resultsBackBtn.addEventListener('click', async () => {
+  console.log("로딩중");
+  questionMain.style.display = "block";
+  resultsContainer.style.display="none"
+
+
+})
