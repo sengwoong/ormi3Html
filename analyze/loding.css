@@ -1,0 +1,48 @@
+
+
+  .loding-character{
+    display: none;
+  }
+  .ormi-character-body {
+    width: 400px; /* 몸통의 너비 설정 */
+    height: 300px; /* 몸통의 높이 설정 */
+    background-image: url('../img/ormiCharacter.png'); /* 배경 이미지 설정 */
+    background-size: cover; /* 이미지를 요소에 맞게 확대 또는 축소 */
+    position: relative; /* 상대 위치로 설정 */
+  }
+
+  .ormi-character-leftHand,
+  .ormi-character-right-hand {
+    position: absolute; /* 양손도 절대 위치로 설정 */
+    transform-origin: bottom center; /* 회전 중심을 아래 중앙으로 설정 */
+  }
+
+  .ormi-character-leftHand {
+    left: -20px; /* 왼손의 초기 위치 (왼쪽으로 이동) */
+  }
+
+  .ormi-character-right-hand {
+    right: -10px; /* 오른손의 초기 위치 (오른쪽으로 이동) */
+  }
+
+  .shaking-hand {
+    animation: shakingLeftAndRight 0.5s ease infinite; /* 흔들리는 애니메이션 적용 */
+  }
+
+  @keyframes shakingLeftAndRight {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg); /* 오른쪽으로 흔들기 */
+    }
+    50% {
+      transform: rotate(-10deg); /* 왼쪽으로 흔들기 */
+    }
+    75% {
+      transform: rotate(10deg); /* 오른쪽으로 흔들기 */
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }

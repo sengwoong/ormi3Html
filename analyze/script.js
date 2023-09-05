@@ -18,7 +18,7 @@ const questionMain = document.getElementById('question');
 const resultsDiv = document.getElementById("results");
 const resultsContainer = document.getElementById("results-container");
 const resultsBackBtn = document.getElementById("results-back-btn");
-
+const loadingCharacter = document.querySelector(".loding-character");
 
 let storedAnswers;
 
@@ -231,10 +231,20 @@ const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/";
 
 
 
+// 로딩 캐릭터 표시 함수
+function LoadingCharacter(display) {
+  if (loadingCharacter) {
+    loadingCharacter.style.display = display;
+  } else {
+    console.error("Element with class 'loading-character' not found.");
+  }
+}
 
+// 체점 버튼 클릭 이벤트 핸들러
 scoringBtn.addEventListener('click', async () => {
   // "로딩중" 메시지를 화면에 표시
   resultsDiv.innerHTML = "로딩중";
+  LoadingCharacter("block"); // 로딩 캐릭터 표시 함수 호출
 
   // 화면 요소 표시 설정
   questionMain.style.display = "none";
@@ -261,11 +271,12 @@ scoringBtn.addEventListener('click', async () => {
         resultsDiv.appendChild(resultElement);
       }
     }
+
+    LoadingCharacter("none");  // 로딩 캐릭터 숨기기 함수 호출
   } catch (error) {
     console.error("에러 발생:", error);
   }
 });
-
 
 
 
