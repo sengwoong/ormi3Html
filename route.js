@@ -1,1 +1,0 @@
-export default host="https://sengwoong.github.io/ormi3Html/"
