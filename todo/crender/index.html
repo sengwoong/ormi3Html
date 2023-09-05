@@ -50,6 +50,7 @@
     <button id="nextMonth">다음 달</button>
     <button id="goHome">홈으로 가기</button>
     <script>
+     
         const calendar = document.getElementById("calendar");
         const prevMonthBtn = document.getElementById("prevMonth");
         const nextMonthBtn = document.getElementById("nextMonth");
@@ -108,7 +109,7 @@
         }
 
         function handleDayClick(day) {
-            window.location.href = `http://127.0.0.1:5500/todo/index.html?year=${currentYear}&month=${currentMonth + 1}&day=${day}`;
+            window.location.href = `https://sengwoong.github.io/ormi3Html/todo/index.html?year=${currentYear}&month=${currentMonth + 1}&day=${day}`;
         }
 
         prevMonthBtn.addEventListener("click", function () {

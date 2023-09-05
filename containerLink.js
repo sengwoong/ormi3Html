@@ -24,12 +24,12 @@ preloaderBtns.forEach((preloaderBtn, index) => {
 
           // 위 버튼일 때는 해당 URL로 이동
           if (preloaderBtn.classList.contains("preloader__btn--top")) {
-            window.location.href = "http://127.0.0.1:5500/analyze/index.html";
+            window.location.href = `https://sengwoong.github.io/ormi3Html/analyze/index.html`;
           }
 
           // 아래 버튼일 때는 해당 URL로 이동
           if (preloaderBtn.classList.contains("preloader__btn--bottom")) {
-            window.location.href = "http://127.0.0.1:5500/todo/crender/index.html";
+            window.location.href = `https://sengwoong.github.io/ormi3Html/todo/crender/index.html`;
           }
         }
       }, 10);
