@@ -10,7 +10,7 @@
 2)계획대로 포스트잇을 올려서 자신이 얼마나했는지 보여준다.
 <br/>
 ## 개발환경 및 배포
-개발환경 - Html css js
+개발환경 - Html css js<br/>
 배포 - http://sengwoong.github.io/ormi3Html
 <br/>
 # 3. 프로젝트 구조와 개발 일정
