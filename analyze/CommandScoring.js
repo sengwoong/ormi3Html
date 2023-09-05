@@ -28,14 +28,14 @@ export class RemoteControl {
   constructor() {
 
     this.commands = [];
-    
+    console.log(this.commands)
   }
 
   addCommand(command) {
 
 
     this.commands.push(command);
-  
+    console.log(this.commands)
   }
 getCommand(){
   let commandIds = new Set
