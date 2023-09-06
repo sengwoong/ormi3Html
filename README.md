@@ -15,7 +15,13 @@
 <br/>
 # 3. 프로젝트 구조와 개발 일정
 <br/><br/>
-<img width="360px" alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/dc788ad6-27d7-416d-a760-19c2b3d4aca1">
+```
+ㄴanalyze (문제풀이)
+ㄴtodo (오늘할일)
+  ㄴcrender (캘린더)
+ㄴlogin (로그인페이지)
+index.html (메인페이지)
+```
 <br/>
 개발일정 - 총5일 소유 (아이디어 1일 개발3.5일 문서화0.5일)<br/>
 <img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/3ce1165b-c3a4-4db7-9c2e-c710655552e4">
@@ -70,7 +76,7 @@
 <img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/64df114d-506d-4e29-8ce1-e5a39854d7f1">
 ㄴ 화면사이즈에따라서 움직이기때문에 멀티로 여러사람이 시시간 공유하며 그리는것이 가능합니다.(벡엔드를 아직 안만들었습니다.)<br/>
 <br/>
-<img width="225" alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/32c5eab6-ed59-4265-9c31-58066c03d5e2">
+<img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/32c5eab6-ed59-4265-9c31-58066c03d5e2">
 <br/>
 ㄴ요일별로 데이트를저장하기위해서 아래와같이 달력으로 입장합니다.<br/>
 
