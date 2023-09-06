@@ -34,7 +34,8 @@ index.html (메인페이지)
 <br/>
 <img alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/796d4db4-da79-47cf-b763-23273b33cb4a">
 <img alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/97cc1d75-0660-49c0-a66d-f0fdd761e821">
-![wfwf](https://github.com/sengwoong/ormi3Html/assets/92924243/8556ad28-4b7f-4180-961c-9e03fc4ea7e3)
+<img alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/8556ad28-4b7f-4180-961c-9e03fc4ea7e3">
+
 
 <br/>
 ㄴ스크린샷을 내려서 심슨오프닝 처럼만들어봤습니다.
@@ -75,8 +76,8 @@ index.html (메인페이지)
 <br/><br/>
 <h2>  오늘할일</h2>
 <img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/64df114d-506d-4e29-8ce1-e5a39854d7f1">
-![asd](https://github.com/sengwoong/ormi3Html/assets/92924243/066396a0-58f4-4309-a26c-3c7e357ed08a)
 
+<img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/066396a0-58f4-4309-a26c-3c7e357ed08a">
 ㄴ 화면사이즈에따라서 움직이기때문에 멀티로 여러사람이 시시간 공유하며 그리는것이 가능합니다.(벡엔드를 아직 안만들었습니다.)<br/>
 <br/>
 <img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/32c5eab6-ed59-4265-9c31-58066c03d5e2">
