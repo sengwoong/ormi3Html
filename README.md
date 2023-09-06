@@ -16,11 +16,37 @@
 # 3. 프로젝트 구조와 개발 일정
 <br/><br/>
 ```
-ㄴanalyze (문제풀이)
-ㄴtodo (오늘할일)
-  ㄴcrender (캘린더)
-ㄴlogin (로그인페이지)
-index.html (메인페이지)
+
+├── Parallax.css
+├── ParallaxPosition.js
+├── README.md
+├── analyze
+│   ├── CommandScoring.js
+│   ├── index.html
+│   ├── loding.css
+│   ├── script.js
+│   └── styles.css
+├── containerLink.css
+├── containerLink.js
+├── img
+│   ├── [ESTsoft] ESTsoft Intro.mp4
+│   ├── cloud.png
+│   ├── darkCloud.png
+│   ├── orimiLeftHand.png
+│   ├── orimiRightHand.png
+│   ├── ormi.png
+│   └── ormiCharacter.png
+├── index.html
+├── login
+│   └── index.html
+├── todo
+│   ├── crender
+│   │   └── index.html
+│   ├── index.html
+│   ├── todo.css
+│   └── todo.js
+├── videocontent.css
+└── youtube.js
 ```
 <br/>
 개발일정 - 총5일 소유 (아이디어 1일 개발3.5일 문서화0.5일)<br/>
@@ -69,10 +95,9 @@ index.html (메인페이지)
 <br/>
 ㄴ 간단하게 결과를 보여줍니다.<br/>
 <br/><br/><br/>
-<h2> 시퀀스다이어그램 </h2>
-<h3> 전략패턴</h3>
 
-<h3>  커맨드패턴 </h3>
+
+
 <br/><br/>
 <h2>  오늘할일</h2>
 <img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/64df114d-506d-4e29-8ce1-e5a39854d7f1">
@@ -84,3 +109,18 @@ index.html (메인페이지)
 <br/>
 ㄴ요일별로 데이트를저장하기위해서 아래와같이 달력으로 입장합니다.<br/>
 
+## 유사전략패턴
+const strategies = {
+react:[],
+js:[],
+node:[],
+}
+<img width="709" alt="스크린샷 2023-09-06 오후 1 58 11" src="https://github.com/sengwoong/ormi3Html/assets/92924243/13cb84cc-44b9-404c-a2cb-b5663937c4c8">
+## 무언가 부족한 옵저버
+<img width="767" alt="스크린샷 2023-09-06 오후 2 02 46" src="https://github.com/sengwoong/ormi3Html/assets/92924243/49c752a4-dab6-4ea8-aa2b-6dbac0346c45">
+
+## 재대로됀 전략패턴
+<img width="845" alt="스크린샷 2023-09-06 오후 2 01 38" src="https://github.com/sengwoong/ormi3Html/assets/92924243/b8bc0c26-2019-4545-88f4-8f1937b156b6">
+ㄴ지피티 쌓아둬
+<img width="667" alt="스크린샷 2023-09-06 오후 2 01 59" src="https://github.com/sengwoong/ormi3Html/assets/92924243/8ab875af-5094-4cd3-a826-fdd0d65b7d0e">
+ㄴ다실행해
