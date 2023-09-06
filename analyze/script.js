@@ -282,7 +282,7 @@ scoringBtn.addEventListener('click', async () => {
 
 
 resultsBackBtn.addEventListener('click', async () => {
- 
+  LoadingCharacter("none"); 
   var resultsDiv = document.getElementById("results");
 
   
