@@ -125,3 +125,5 @@ node:[],
 ㄴ지피티를 저장해 <br/>
 <img width="667" alt="스크린샷 2023-09-06 오후 2 01 59" src="https://github.com/sengwoong/ormi3Html/assets/92924243/8ab875af-5094-4cd3-a826-fdd0d65b7d0e"><br/>
 ㄴ다실행해
+
+### 트러블슈팅 (만들기)
