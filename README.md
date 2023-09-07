@@ -117,10 +117,8 @@ js:[],
 node:[],
 }
 <img width="709" alt="스크린샷 2023-09-06 오후 1 58 11" src="https://github.com/sengwoong/ormi3Html/assets/92924243/13cb84cc-44b9-404c-a2cb-b5663937c4c8">
-## 무언가 부족한 옵저버
-<img width="767" alt="스크린샷 2023-09-06 오후 2 02 46" src="https://github.com/sengwoong/ormi3Html/assets/92924243/49c752a4-dab6-4ea8-aa2b-6dbac0346c45">
 
-## 재대로만든 전략패턴
+## 재대로만든 커맨드패턴
 <img width="845" alt="스크린샷 2023-09-06 오후 2 01 38" src="https://github.com/sengwoong/ormi3Html/assets/92924243/b8bc0c26-2019-4545-88f4-8f1937b156b6"><br/>
 ㄴ지피티를 저장해 <br/>
 <img width="667" alt="스크린샷 2023-09-06 오후 2 01 59" src="https://github.com/sengwoong/ormi3Html/assets/92924243/8ab875af-5094-4cd3-a826-fdd0d65b7d0e"><br/>
