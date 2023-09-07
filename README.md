@@ -51,9 +51,8 @@
 ```
 <br/>
 개발일정 - 총5일 소유 (아이디어 1일 개발3.5일 문서화0.5일)<br/>
-![스크린샷 2023-09-07 오전 11 32 45](https://github.com/sengwoong/ormi3Html/assets/92924243/edead1ce-a622-424f-a0a1-e949360931ce)
 
-
+<img alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/edead1ce-a622-424f-a0a1-e949360931ce">
 <br/>
 # 프로젝트 스크린샷
 <br/>
