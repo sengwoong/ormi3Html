@@ -14,6 +14,7 @@
 배포 - http://sengwoong.github.io/ormi3Html
 <br/>
 # 3. 프로젝트 구조와 개발 일정
+
 <br/><br/>
 ```
 
@@ -50,7 +51,8 @@
 ```
 <br/>
 개발일정 - 총5일 소유 (아이디어 1일 개발3.5일 문서화0.5일)<br/>
-<img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/3ce1165b-c3a4-4db7-9c2e-c710655552e4">
+
+<img  alt="스크린샷 2023-09-06 오전 7 32 23" src="https://github.com/sengwoong/ormi3Html/assets/92924243/30c7d8d0-c7de-447f-b9ed-81466b2031bc">
 <br/>
 # 프로젝트 스크린샷
 <br/>
